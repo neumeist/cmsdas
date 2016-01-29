@@ -15,14 +15,12 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 process.options = cms.untracked.PSet( wantSummary = cms.untracked.bool(False),
 SkipEvent = cms.untracked.vstring('ProductNotFound'))
 
-process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring('file:///eos/uscms/store/user/cmsdas/2015/SHORT_EXERCISES/MUONS/dymm.root'))
+process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring('file:///eos/uscms/store/user/cmsdas/2016/SHORT_EXERCISES/Muons/dymm.root'))
 
 process.demo = cms.EDAnalyzer('MuonExercise1')
 
-process.printEventNumber = cms.OutputModule("AsciiOutputModule")
-
 process.TFileService = cms.Service("TFileService",
-          fileName = cms.string('histos.root')
+          fileName = cms.string('histos1.root')
 )
 
 process.p = cms.Path(process.demo)
